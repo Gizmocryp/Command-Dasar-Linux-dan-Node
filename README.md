@@ -2,19 +2,21 @@
 
 <img width="1532" height="774" alt="Screenshot 2026-03-10 045526" src="https://github.com/user-attachments/assets/3d50495f-4164-47bb-b785-9933fe9d6e28" />
 
-### 1. Update & Upgrade System
+### 1. File System Hierarchi
 
 ```
-#Update & upgrade terpisah
-~ sudo apt update
-~ sudo apt upgrade
-
-#update keseluruhan langsung
-sudo apt update && sudo apt upgrade -y
+- / : Menduduki posisi puncak didalam hirarki.
+- bin : Direktori ini berisi perintah dasar yang dibutuhkan oleh system maupun user.
+- boot : Berisi program dan data yang dibutuhkan pada saat melakukan proses booting (menjalankan) system.
+- dev : Direktori tempat file device.
+- etc : berisi file konfigurasi system.
+- home : direktori tempat menyimpan data user.
+- var : Untuk menyimpan informasi proses, seperti system history, access logs, dan error logs.
+- mnt : Direktori untuk menyimpan mount point sementara.
+- opt : Direktori ini berisi paket-paket Aplikasi Opsional (paket-paket yang diinstall user).
 ```
 
-### 2. BUAT & HAPUS FOLDER/FILE
-
+## 2. File & Directory Management
 ```
 #buat folder
 mkdir nama-folder
@@ -39,9 +41,20 @@ rm -rf nama-folder/file
 ```
 #Kembali ke folder sebelumnya
 cd --
+
+```
+### 3. Update & Upgrade System
+
+```
+#Update & upgrade terpisah
+~ sudo apt update
+~ sudo apt upgrade
+
+#update keseluruhan langsung
+sudo apt update && sudo apt upgrade -y
 ```
 
-### 3. GIT
+### 4. GIT
 
 ```
 #install git
@@ -59,7 +72,7 @@ git clone link-github-yg-mau-di-clone
 #hapus git
 sudo apt remove git
 ```
-### 4. SCREEN
+### 5. SCREEN
 
 ```
 #install screen
@@ -89,7 +102,7 @@ screen -X -S namascreen quit
 #uninstall screen
 sudo apt remove screen
 ```
-### 5. Docker
+### 6. Docker
 ```
 #install docker
 sudo apt-get install -y ca-certificates curl gnupg lsb-release && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io && sudo apt-mark hold docker-ce docker-ce-cli containerd.io
@@ -111,7 +124,7 @@ docker rm <IDContainer>
 sudo apt-mark unhold docker-ce docker-ce-cli containerd.io && sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo rm /etc/apt/sources.list.d/docker.list && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
 
-### 6. Go (Golang)
+### 7. Go (Golang)
 ```
 #install go
 LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${LATEST_GO}.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf ${LATEST_GO}.linux-amd64.tar.gz && echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> ~/.bash_profile && source ~/.bash_profile && go version
@@ -121,7 +134,7 @@ LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${L
 sudo rm -rf /usr/local/go && sed -i '/\/usr\/local\/go\/bin/d' ~/.bash_profile && sed -i '/\/go\/bin/d' ~/.bash_profile && source ~/.bash_profile
 ```
 
-### 7. Node js
+### 8. Node js
 ```
 #install node js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash && source ~/.bashrc && nvm install node && nvm use node && node -v
@@ -134,7 +147,7 @@ rm -rf ~/.nvm && sed -i '/NVM_DIR/d' ~/.bashrc && source ~/.bashrc
 #menjalankan/run file js (node.js)
 node namafile.js
 ```
-### 8. Python
+### 9. Python
 ```
 #install Python
 sudo apt-get update && sudo apt-get install -y software-properties-common && sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3 python3-pip && python3 --version && pip3 --version
@@ -147,7 +160,7 @@ sudo apt-get remove --purge -y python3.* && sudo apt-get autoremove -y && sudo a
 #menjalankan/run file py (python)
 python3 namafile.py
 ```
-### 9. Update Sistem VPS
+### 10. Update Sistem VPS
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc jq chrony liblz4-tool -y
