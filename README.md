@@ -1,5 +1,7 @@
 # Command Dasar Linux & Node
 
+<img width="1532" height="774" alt="Screenshot 2026-03-10 045526" src="https://github.com/user-attachments/assets/3d50495f-4164-47bb-b785-9933fe9d6e28" />
+
 ### 1. Update & Upgrade System
 
 ```
