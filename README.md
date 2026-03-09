@@ -2,25 +2,39 @@
 
 <img width="1532" height="774" alt="Screenshot 2026-03-10 045526" src="https://github.com/user-attachments/assets/3d50495f-4164-47bb-b785-9933fe9d6e28" />
 
-### 1. File System Hierarchi
+# 1. File System Hierarchi
 
-```
-- / : Menduduki posisi puncak didalam hirarki.
-- bin : Direktori ini berisi perintah dasar yang dibutuhkan oleh system maupun user.
-- boot : Berisi program dan data yang dibutuhkan pada saat melakukan proses booting (menjalankan) system.
-- dev : Direktori tempat file device.
-- etc : berisi file konfigurasi system.
-- home : direktori tempat menyimpan data user.
-- var : Untuk menyimpan informasi proses, seperti system history, access logs, dan error logs.
-- mnt : Direktori untuk menyimpan mount point sementara.
-- opt : Direktori ini berisi paket-paket Aplikasi Opsional (paket-paket yang diinstall user).
-```
+- `/` : Menduduki posisi puncak didalam hirarki.
+- `bin` : Direktori ini berisi perintah dasar yang dibutuhkan oleh system maupun user.
+- `boot` : Berisi program dan data yang dibutuhkan pada saat melakukan proses booting (menjalankan) system.
+- `dev` : Direktori tempat file device.
+- `etc` : berisi file konfigurasi system.
+- `home` : direktori tempat menyimpan data user.
+- `var` : Untuk menyimpan informasi proses, seperti system history, access logs, dan error logs.
+- `mnt` : Direktori untuk menyimpan mount point sementara.
+- `opt` : Direktori ini berisi paket-paket Aplikasi Opsional (paket-paket yang diinstall user).
 
-## 2. File & Directory Management
-```
-#buat folder
-mkdir nama-folder
-```
+# 2. File & Directory Management
+
+## File Management
+
+- `touch` : Membuat file tanpa content
+- `echo/vim/vi/nano` : Membuat file dengan content
+- `cat` : Menampilkan isi content file
+- `head` : Menampilkan 10 baris pertama sebuah file
+- `tail` : Menampilkan 10 baris terakhir sebuah file
+- `rm` : Menghapus file
+- `cp` : Menyalin file dan directory
+- `mv` : Memindahkan/me rename file dan directory
+
+## Directory Management
+
+- `cd` : Masuk/keluar directory
+- `mkdir` : Membuat directory
+- `rmdir` : Menghapus directory
+- `ls` : Menampilkan isi directory
+- `pwd` : Menampilkan di directory mana kita berada
+
 ```
 #check folder
 ls
