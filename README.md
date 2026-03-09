@@ -35,27 +35,9 @@
 - `ls` : Menampilkan isi directory
 - `pwd` : Menampilkan di directory mana kita berada
 
+Kembali ke folder sebelumnya
 ```
-#check folder
-ls
-```
-```
-#buat file
-nano nama-file
-```
-```
-#save file nano
-CTRL + X + Y + `Enter`
-```
-```
-#hapus-file-folder
-rm -rf nama-folder/file
-```
-
-```
-#Kembali ke folder sebelumnya
-cd --
-
+cd ..
 ```
 ### 3. Update & Upgrade System
 
