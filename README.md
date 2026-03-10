@@ -50,7 +50,7 @@ cd ..
 sudo apt update && sudo apt upgrade -y
 ```
 
-#4. User & Group Management
+# 4. User & Group Management
 ## User Management
 
 - `useradd / adduser` : Membuat user baru
