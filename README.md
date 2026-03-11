@@ -39,18 +39,8 @@ Kembali ke folder sebelumnya
 ```
 cd ..
 ```
-# 3. Update & Upgrade System
 
-```
-#Update & upgrade terpisah
-~ sudo apt update
-~ sudo apt upgrade
-
-#update keseluruhan langsung
-sudo apt update && sudo apt upgrade -y
-```
-
-# 4. User & Group Management
+# 3. User & Group Management
 ## User Management
 
 - `useradd / adduser` : Membuat user baru
@@ -64,7 +54,26 @@ sudo apt update && sudo apt upgrade -y
 - `groupdel` : Menghapus group
 - `groupmod` : Modifikasi group
 
-# . GIT
+# 4. Basic Networking
+
+- `ip a / ifconfig` : Untuk melihat konfigurasi ip
+- `traceroute` : Untuk melacak rute paket
+- `ping` : Untuk memeriksa konektivitas perangkat
+
+# 5. Package Management (APT)
+<img width="1563" height="594" alt="Screenshot 2026-03-11 204753" src="https://github.com/user-attachments/assets/84531055-9ba3-4ee8-8c94-03a11599e631" />
+
+## APT Command
+- `apt upgrade` : Mengupgrade packet yang sudah terinstall
+- `apt upgrade` : Mengupdate daftar paket dari repository
+- `apt install` : Menginstall packet baru
+- `apt remove / purge` : Menghapus packet (biasanya pakai `apt purge (...nama package...) && apt autoremove` untuk menghapus dan membersihkan package yang mau kita hapus) 
+- `apt list --installed` : Menampilkan list package yang terinstall
+
+## update keseluruhan langsung
+- `sudo apt update && sudo apt upgrade -y`
+
+# 6. GIT
 
 ```
 #install git
@@ -82,7 +91,7 @@ git clone link-github-yg-mau-di-clone
 #hapus git
 sudo apt remove git
 ```
-# . SCREEN
+# 7. SCREEN
 
 ```
 #install screen
@@ -112,7 +121,7 @@ screen -X -S namascreen quit
 #uninstall screen
 sudo apt remove screen
 ```
-# . Docker
+# 8. Docker
 ```
 #install docker
 sudo apt-get install -y ca-certificates curl gnupg lsb-release && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io && sudo apt-mark hold docker-ce docker-ce-cli containerd.io
@@ -134,7 +143,7 @@ docker rm <IDContainer>
 sudo apt-mark unhold docker-ce docker-ce-cli containerd.io && sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo rm /etc/apt/sources.list.d/docker.list && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
 
-# . Go (Golang)
+# 9. Go (Golang)
 ```
 #install go
 LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${LATEST_GO}.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf ${LATEST_GO}.linux-amd64.tar.gz && echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> ~/.bash_profile && source ~/.bash_profile && go version
@@ -144,7 +153,7 @@ LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${L
 sudo rm -rf /usr/local/go && sed -i '/\/usr\/local\/go\/bin/d' ~/.bash_profile && sed -i '/\/go\/bin/d' ~/.bash_profile && source ~/.bash_profile
 ```
 
-# . Node js
+# 10. Node js
 ```
 #install node js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash && source ~/.bashrc && nvm install node && nvm use node && node -v
@@ -157,7 +166,7 @@ rm -rf ~/.nvm && sed -i '/NVM_DIR/d' ~/.bashrc && source ~/.bashrc
 #menjalankan/run file js (node.js)
 node namafile.js
 ```
-# . Python
+# 11. Python
 ```
 #install Python
 sudo apt-get update && sudo apt-get install -y software-properties-common && sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3 python3-pip && python3 --version && pip3 --version
@@ -170,7 +179,7 @@ sudo apt-get remove --purge -y python3.* && sudo apt-get autoremove -y && sudo a
 #menjalankan/run file py (python)
 python3 namafile.py
 ```
-# . Update Sistem VPS
+# 12. Update Sistem VPS
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc jq chrony liblz4-tool -y
